@@ -1,0 +1,40 @@
+          <!-- METER CHANGE -->
+          <div class="page" id="page-meter-change">
+            <div
+              style="
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                margin-bottom: 20px;
+              "
+            >
+              <div style="font-size: 13px; color: var(--text-muted)">
+                Track meter replacements with old and new meter info
+              </div>
+              <button
+                class="btn btn-primary btn-sm"
+                onclick="showModal('meterModal')"
+              >
+                + New Meter Change
+              </button>
+            </div>
+            <div class="card">
+              <div style="overflow-x: auto">
+                <table id="meterTable">
+                  <thead>
+                    <tr>
+                      <th>MC No.</th>
+                      <th>Consumer</th>
+                      <th>Account</th>
+                      <th>Reason</th>
+                      <th>Old Meter</th>
+                      <th>New Meter</th>
+                      <th>Status</th>
+                      <th>Actions</th>
+                    </tr>
+                  </thead>
+                  <tbody id="meterTableBody"></tbody>
+                </table>
+              </div>
+            </div>
+          </div>

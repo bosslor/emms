@@ -1,0 +1,60 @@
+          <!-- MEMBERS -->
+          <div class="page" id="page-members">
+            <div
+              style="
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                margin-bottom: 20px;
+              "
+            >
+              <div style="font-size: 13px; color: var(--text-muted)">
+                Manage member registrations and personal data
+              </div>
+              <div style="display: flex; gap: 8px">
+                <button
+                  class="btn btn-sm"
+                  style="background: #06b6d4; color: #fff; display: none"
+                  id="btnImportCoordsNav"
+                  onclick="showModal('importCoordsModal')"
+                >
+                  📍 Import Coordinates
+                </button>
+              </div>
+            </div>
+            <div class="filter-bar">
+              <select
+                class="form-input"
+                onchange="filterTable('memberTable', this.value, 5)"
+              >
+                <option value="">All Status</option>
+                <option value="Active">Active</option>
+                <option value="Pending">Pending</option>
+                <option value="Disconnected">Disconnected</option>
+              </select>
+              <input
+                type="text"
+                class="form-input"
+                placeholder="Search by name or account..."
+                onkeyup="searchTable('memberTable', this.value)"
+              />
+            </div>
+            <div class="card">
+              <div style="overflow-x: auto">
+                <table id="memberTable">
+                  <thead>
+                    <tr>
+                      <th>Account No.</th>
+                      <th>Name</th>
+                      <th>Address</th>
+                      <th>Meter No.</th>
+                      <th>Connection</th>
+                      <th>Status</th>
+                      <th>Actions</th>
+                    </tr>
+                  </thead>
+                  <tbody id="memberTableBody"></tbody>
+                </table>
+              </div>
+            </div>
+          </div>

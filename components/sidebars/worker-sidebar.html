@@ -1,0 +1,72 @@
+<!-- WORKER SIDEBAR -->
+<aside
+  class="sidebar worker-sidebar"
+  id="workerSidebar"
+  style="display: none"
+>
+  <div class="sidebar-header">
+    <div class="sidebar-logo">
+      <img
+        src="sidebar-logo.png"
+        alt="Logo"
+        class="admin-sidebar"
+      />
+    </div>
+    <div>
+      <div class="sidebar-brand">ESAMELCO</div>
+      <div class="sidebar-brand-sub">FIELD CREW PORTAL</div>
+    </div>
+  </div>
+  <nav class="sidebar-nav">
+    <div class="nav-section-label">My Work</div>
+    <div
+      class="nav-item active"
+      data-page="w-dashboard"
+      onclick="navigateTo('w-dashboard')"
+    >
+      <span class="nav-icon">🏠</span> My Dashboard
+    </div>
+    <div
+      class="nav-item"
+      data-page="w-assignments"
+      onclick="navigateTo('w-assignments')"
+    >
+      <span class="nav-icon">📋</span> My Assignments
+      <span class="nav-badge" id="wAssignBadge">0</span>
+    </div>
+    <div class="nav-item" data-page="w-map" onclick="navigateTo('w-map')">
+      <span class="nav-icon">🗺️</span> Job Map
+    </div>
+    <div
+      class="nav-item"
+      data-page="w-completed"
+      onclick="navigateTo('w-completed')"
+    >
+      <span class="nav-icon">✅</span> Completed Jobs
+    </div>
+    <div class="nav-section-label">My Account</div>
+    <div
+      class="nav-item"
+      data-page="w-status"
+      onclick="navigateTo('w-status')"
+    >
+      <span class="nav-icon">🔄</span> My Status
+    </div>
+  </nav>
+  <div class="sidebar-footer">
+    <div class="user-info">
+      <div
+        class="user-avatar"
+        id="wUserAvatar"
+        style="background: #06b6d4"
+      ></div>
+      <div>
+        <div class="user-name" id="wUserName">Worker</div>
+        <div class="user-role" id="wUserRole">Field Crew</div>
+      </div>
+    </div>
+    <button class="logout-btn" onclick="handleLogout()">
+      ↩ Sign Out
+    </button>
+  </div>
+</aside>

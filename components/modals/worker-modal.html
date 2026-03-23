@@ -1,0 +1,103 @@
+    <!-- Worker Modal -->
+    <div class="modal-overlay" id="workerModal">
+      <div class="modal" style="width: 600px">
+        <div class="modal-header">
+          <div class="modal-title">Add New Field Worker</div>
+          <button class="modal-close" onclick="hideModal('workerModal')">
+            ✕
+          </button>
+        </div>
+        <div class="modal-body">
+          <div class="form-row form-row-2">
+            <div class="form-group">
+              <label class="form-label">Full Name *</label
+              ><input
+                type="text"
+                class="form-input"
+                id="wkName"
+                placeholder="e.g. Rodel M. Balictar"
+              />
+            </div>
+            <div class="form-group">
+              <label class="form-label">Username (for login) *</label
+              ><input
+                type="text"
+                class="form-input"
+                id="wkUsername"
+                placeholder="e.g. crew_rodel"
+              />
+            </div>
+          </div>
+          <div class="form-row form-row-2">
+            <div class="form-group">
+              <label class="form-label">Crew / Team *</label>
+              <select class="form-input" id="wkTeam">
+                <option value="">Select team</option>
+                <option>Crew Alpha</option>
+                <option>Crew Bravo</option>
+                <option>Crew Charlie</option>
+                <option>Crew Delta</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Specialty</label>
+              <select class="form-input" id="wkSpecialty">
+                <option value="">Select specialty</option>
+                <option>Line Maintenance</option>
+                <option>Meter Installation</option>
+                <option>Transformer Repair</option>
+                <option>Reconnection</option>
+                <option>Tree Trimming</option>
+                <option>Pole Installation</option>
+                <option>General Maintenance</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-row form-row-2">
+            <div class="form-group">
+              <label class="form-label">Phone Number</label
+              ><input
+                type="text"
+                class="form-input"
+                id="wkPhone"
+                placeholder="09xx-xxx-xxxx"
+              />
+            </div>
+            <div class="form-group">
+              <label class="form-label">Initial Status</label>
+              <select class="form-input" id="wkStatus">
+                <option value="Available">Available</option>
+                <option value="Off Duty">Off Duty</option>
+                <option value="On Leave">On Leave</option>
+              </select>
+            </div>
+          </div>
+          <div
+            style="
+              margin-top: 16px;
+              padding: 12px 16px;
+              background: rgba(6, 182, 212, 0.08);
+              border: 1px solid rgba(6, 182, 212, 0.2);
+              border-radius: var(--radius-sm);
+              font-size: 12px;
+              color: #06b6d4;
+              line-height: 1.6;
+            "
+          >
+            ℹ️ A login account will be auto-created for this worker. They can
+            sign in using the username above with the
+            <strong>Field Worker / Crew</strong> role.
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button
+            class="btn btn-ghost btn-sm"
+            onclick="hideModal('workerModal')"
+          >
+            Cancel</button
+          ><button class="btn btn-success btn-sm" onclick="submitWorker()">
+            Add Worker
+          </button>
+        </div>
+      </div>
+    </div>

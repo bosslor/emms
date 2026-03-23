@@ -1,0 +1,62 @@
+          <!-- SERVICE REQUESTS -->
+          <div class="page" id="page-service-requests">
+            <div
+              style="
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                margin-bottom: 20px;
+              "
+            >
+              <div style="font-size: 13px; color: var(--text-muted)">
+                Track and manage all service requests
+              </div>
+              <button
+                class="btn btn-primary btn-sm"
+                onclick="showModal('srModal')"
+              >
+                + New Request
+              </button>
+            </div>
+            <div class="filter-bar">
+              <select
+                class="form-input"
+                onchange="filterTable('srTable', this.value, 5)"
+              >
+                <option value="">All Status</option>
+                <option value="New">New</option>
+                <option value="In Progress">In Progress</option>
+                <option value="Completed">Completed</option>
+              </select>
+              <select
+                class="form-input"
+                onchange="filterTable('srTable', this.value, 3)"
+              >
+                <option value="">All Types</option>
+                <option value="High Bill">High Bill</option>
+                <option value="No Light">No Light</option>
+                <option value="Meter Reading Error">Meter Reading Error</option>
+                <option value="Loose Connection">Loose Connection</option>
+                <option value="Busted Transformer">Busted Transformer</option>
+              </select>
+            </div>
+            <div class="card">
+              <div style="overflow-x: auto">
+                <table id="srTable">
+                  <thead>
+                    <tr>
+                      <th>SR No.</th>
+                      <th>Consumer</th>
+                      <th>Meter No.</th>
+                      <th>Nature</th>
+                      <th>Assigned To</th>
+                      <th>Status</th>
+                      <th>Filed</th>
+                      <th>Actions</th>
+                    </tr>
+                  </thead>
+                  <tbody id="srTableBody"></tbody>
+                </table>
+              </div>
+            </div>
+          </div>

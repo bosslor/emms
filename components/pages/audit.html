@@ -1,0 +1,49 @@
+          <!-- AUDIT LOG -->
+          <div class="page" id="page-audit">
+            <div
+              style="
+                font-size: 13px;
+                color: var(--text-muted);
+                margin-bottom: 20px;
+              "
+            >
+              Complete audit trail of all system actions
+            </div>
+            <div
+              class="filter-bar"
+              style="
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                flex-wrap: wrap;
+                gap: 10px;
+              "
+            >
+              <select
+                class="form-input"
+                id="auditFilter"
+                onchange="renderAuditLog()"
+                style="min-width: 140px"
+              >
+                <option value="">All Actions</option>
+                <option value="CREATE">Created</option>
+                <option value="UPDATE">Updated</option>
+                <option value="APPROVE">Approved</option>
+                <option value="REJECT">Rejected</option>
+                <option value="DELETE">Deleted</option>
+                <option value="ASSIGN">Assigned</option>
+                <option value="LOGIN">Login</option>
+              </select>
+              <button
+                class="btn btn-danger btn-sm"
+                id="purgeBtn"
+                style="display: none"
+                onclick="previewPurge()"
+              >
+                🗑️ Purge Old Records
+              </button>
+            </div>
+            <div class="card">
+              <div class="card-body" id="auditLogBody"></div>
+            </div>
+          </div>

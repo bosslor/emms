@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ESAMELCO — Maintenance Management System</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700&family=JetBrains+Mono:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <!-- Leaflet.js for GIS / Job Map -->
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    />
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  </head>
+  <body>
+    <div class="toast-container" id="toastContainer"></div>
+    <div
+      class="sidebar-overlay"
+      id="sidebarOverlay"
+      onclick="closeSidebar()"
+    ></div>
+
+    <!-- ============================================================
+         COMPONENT INCLUDES
+         Each data-include points to a separate HTML file.
+         Edit any file independently without affecting others.
+         ============================================================ -->
+
+    <!-- LOGIN SCREEN -->
+    <div data-include="components/login.html"></div>
+
+    <!-- MAIN APP -->
+    <div class="app" id="app">
+
+      <!-- SIDEBARS -->
+      <div data-include="components/sidebars/admin-sidebar.html"></div>
+      <div data-include="components/sidebars/consumer-sidebar.html"></div>
+      <div data-include="components/sidebars/worker-sidebar.html"></div>
+
+      <main class="main">
+        <!-- TOP BAR -->
+        <div data-include="components/topbar.html"></div>
+
+        <div class="content">
+          <!-- ===== ADMIN PAGES ===== -->
+          <div data-include="components/pages/dashboard.html"></div>
+          <div data-include="components/pages/members.html"></div>
+          <div data-include="components/pages/service-requests.html"></div>
+          <div data-include="components/pages/reconnection.html"></div>
+          <div data-include="components/pages/meter-change.html"></div>
+          <div data-include="components/pages/senior-discount.html"></div>
+          <div data-include="components/pages/approvals.html"></div>
+          <div data-include="components/pages/audit.html"></div>
+          <div data-include="components/pages/workers.html"></div>
+          <div data-include="components/pages/user-mgmt.html"></div>
+
+          <!-- ===== CONSUMER PAGES ===== -->
+          <div data-include="components/pages/consumer-dashboard.html"></div>
+          <div data-include="components/pages/consumer-new-request.html"></div>
+          <div data-include="components/pages/consumer-my-requests.html"></div>
+          <div data-include="components/pages/consumer-senior.html"></div>
+
+          <!-- ===== WORKER PAGES ===== -->
+          <div data-include="components/pages/worker-dashboard.html"></div>
+          <div data-include="components/pages/worker-assignments.html"></div>
+          <div data-include="components/pages/worker-map.html"></div>
+          <div data-include="components/pages/worker-completed.html"></div>
+          <div data-include="components/pages/worker-status.html"></div>
+        </div>
+      </main>
+    </div>
+
+    <!-- ===== MODALS ===== -->
+    <div data-include="components/modals/sr-modal.html"></div>
+    <div data-include="components/modals/recon-modal.html"></div>
+    <div data-include="components/modals/meter-modal.html"></div>
+    <div data-include="components/modals/senior-modal.html"></div>
+    <div data-include="components/modals/worker-modal.html"></div>
+    <div data-include="components/modals/user-modal.html"></div>
+    <div data-include="components/modals/import-coords-modal.html"></div>
+    <div data-include="components/modals/detail-modal.html"></div>
+
+    <!-- ============================================================
+         COMPONENT LOADER
+         This script fetches all [data-include] files and injects
+         their HTML content in place. After all components are loaded,
+         it initializes the app by loading app.js.
+         ============================================================ -->
+    <script>
+      (async function loadComponents() {
+        const includes = document.querySelectorAll("[data-include]");
+        const promises = Array.from(includes).map(async (el) => {
+          const file = el.getAttribute("data-include");
+          try {
+            const resp = await fetch(file);
+            if (!resp.ok) throw new Error(`Failed to load ${file}: ${resp.status}`);
+            const html = await resp.text();
+            el.outerHTML = html;
+          } catch (err) {
+            console.error(err);
+            el.outerHTML = `<!-- ERROR loading ${file} -->`;
+          }
+        });
+        await Promise.all(promises);
+
+        // After all components are loaded, initialize the app
+        const script = document.createElement("script");
+        script.src = "app.js?v=" + Date.now();
+        document.body.appendChild(script);
+      })();
+    </script>
+  </body>
+</html>

@@ -1,0 +1,30 @@
+          <!-- APPROVALS -->
+          <div class="page" id="page-approvals">
+            <div
+              style="
+                font-size: 13px;
+                color: var(--text-muted);
+                margin-bottom: 20px;
+              "
+            >
+              Review and approve pending requests
+            </div>
+            <div class="tabs">
+              <div class="tab active" onclick="switchApprovalTab('all', this)">
+                All Pending
+              </div>
+              <div
+                class="tab"
+                onclick="switchApprovalTab('reconnection', this)"
+              >
+                Reconnection
+              </div>
+              <div class="tab" onclick="switchApprovalTab('meter', this)">
+                Meter Change
+              </div>
+              <div class="tab" onclick="switchApprovalTab('senior', this)">
+                Senior Discount
+              </div>
+            </div>
+            <div id="approvalList"></div>
+          </div>

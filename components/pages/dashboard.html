@@ -1,0 +1,76 @@
+          <div class="page active" id="page-dashboard">
+            <div class="stats-grid">
+              <div class="stat-card">
+                <div
+                  class="stat-icon"
+                  style="
+                    background: rgba(59, 130, 246, 0.15);
+                    color: var(--accent-blue);
+                  "
+                >
+                  👥
+                </div>
+                <div class="stat-value" id="statMembers">0</div>
+                <div class="stat-label">Total Members</div>
+                <div class="stat-change up">↑ 12 this month</div>
+              </div>
+              <div class="stat-card">
+                <div
+                  class="stat-icon"
+                  style="
+                    background: var(--accent-orange-dim);
+                    color: var(--accent-orange);
+                  "
+                >
+                  🔧
+                </div>
+                <div class="stat-value" id="statSR">0</div>
+                <div class="stat-label">Open Service Requests</div>
+                <div class="stat-change down">↑ 3 from last week</div>
+              </div>
+              <div class="stat-card">
+                <div
+                  class="stat-icon"
+                  style="
+                    background: var(--accent-green-dim);
+                    color: var(--accent-green);
+                  "
+                >
+                  🔌
+                </div>
+                <div class="stat-value" id="statRecon">0</div>
+                <div class="stat-label">Pending Reconnections</div>
+                <div class="stat-change up">↓ 2 from last week</div>
+              </div>
+              <div class="stat-card">
+                <div
+                  class="stat-icon"
+                  style="
+                    background: var(--accent-purple-dim);
+                    color: var(--accent-purple);
+                  "
+                >
+                  ✅
+                </div>
+                <div class="stat-value" id="statApproval">0</div>
+                <div class="stat-label">Awaiting Approval</div>
+                <div class="stat-change down">Needs attention</div>
+              </div>
+            </div>
+            <div class="dashboard-grid">
+              <div class="card">
+                <div class="card-header">
+                  <div class="card-title">Service Requests by Type</div>
+                </div>
+                <div class="card-body">
+                  <div class="chart-container" id="srChart"></div>
+                </div>
+              </div>
+              <div class="card">
+                <div class="card-header">
+                  <div class="card-title">Recent Activity</div>
+                </div>
+                <div class="card-body" id="recentActivity"></div>
+              </div>
+            </div>
+          </div>

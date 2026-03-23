@@ -1,0 +1,103 @@
+<!-- CONSUMER DASHBOARD -->
+<div class="page" id="page-c-dashboard">
+  <div class="consumer-hero" id="consumerHero">
+    <div
+      style="display: flex; align-items: center; gap: 16px; position: relative"
+    >
+      <div
+        style="
+          width: 56px;
+          height: 56px;
+          border-radius: 14px;
+          background: var(--esamelco-green);
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          font-size: 22px;
+          font-weight: 700;
+          color: #fff;
+        "
+        id="cHeroAvatar"
+      >
+        M
+      </div>
+      <div>
+        <div class="consumer-hero-name" id="cHeroName">Consumer Name</div>
+        <div class="consumer-hero-account">
+          Account: <span id="cHeroAccount">—</span> · Meter:
+          <span id="cHeroMeter">—</span>
+        </div>
+      </div>
+      <div style="margin-left: auto">
+        <span
+          class="badge badge-approved"
+          id="cHeroStatus"
+          style="font-size: 13px; padding: 5px 14px"
+          >Active</span
+        >
+      </div>
+    </div>
+  </div>
+
+  <div class="info-grid" id="cAccountInfo">
+    <div class="info-cell">
+      <div class="info-cell-label">Address</div>
+      <div class="info-cell-value" id="cInfoAddress">—</div>
+    </div>
+    <div class="info-cell">
+      <div class="info-cell-label">Connection Type</div>
+      <div class="info-cell-value" id="cInfoConn">—</div>
+    </div>
+    <div class="info-cell">
+      <div class="info-cell-label">Phone</div>
+      <div class="info-cell-value" id="cInfoPhone">—</div>
+    </div>
+    <div class="info-cell">
+      <div class="info-cell-label">Member Since</div>
+      <div class="info-cell-value" id="cInfoSince">—</div>
+    </div>
+  </div>
+
+  <div style="margin-top: 24px">
+    <div class="card">
+      <div class="card-header">
+        <div class="card-title">My Active Requests</div>
+      </div>
+      <div class="card-body" id="cActiveRequests">
+        <div class="empty-state" style="padding: 24px">
+          <div class="empty-state-icon" style="font-size: 32px">✅</div>
+          <div style="font-size: 13px">No active requests</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card" style="margin-top: 20px">
+    <div class="card-header">
+      <div class="card-title">Quick Actions</div>
+    </div>
+    <div class="card-body" style="display: flex; gap: 12px; flex-wrap: wrap">
+      <button
+        class="btn btn-outline btn-sm"
+        onclick="navigateTo('c-new-request')"
+        style="flex: 1; justify-content: center; padding: 16px"
+      >
+        📝 Submit Service Request
+      </button>
+      <button
+        class="btn btn-outline btn-sm"
+        onclick="navigateTo('c-my-requests')"
+        style="flex: 1; justify-content: center; padding: 16px"
+      >
+        📋 Track My Requests
+      </button>
+      <button
+        class="btn btn-outline btn-sm"
+        onclick="navigateTo('c-senior')"
+        style="flex: 1; justify-content: center; padding: 16px"
+      >
+        🎖️ Apply for SC Discount
+      </button>
+    </div>
+  </div>
+</div>

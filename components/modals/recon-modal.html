@@ -1,0 +1,161 @@
+    <!-- Reconnection Modal -->
+    <div class="modal-overlay" id="reconModal">
+      <div class="modal" style="width: 650px">
+        <div class="modal-header">
+          <div class="modal-title">New Reconnection Order</div>
+          <button class="modal-close" onclick="hideModal('reconModal')">
+            ✕
+          </button>
+        </div>
+        <div class="modal-body">
+          <div class="form-row form-row-2">
+            <div class="form-group">
+              <label class="form-label">Consumer Name</label
+              ><input
+                type="text"
+                class="form-input"
+                id="roName"
+                placeholder="Full name"
+              />
+            </div>
+            <div class="form-group">
+              <label class="form-label">Account No.</label
+              ><input
+                type="text"
+                class="form-input"
+                id="roAccount"
+                placeholder="05-0502-0497"
+              />
+            </div>
+          </div>
+          <div class="form-row form-row-2">
+            <div class="form-group">
+              <label class="form-label">Address</label
+              ><input
+                type="text"
+                class="form-input"
+                id="roAddress"
+                placeholder="Brgy., Municipality"
+              />
+            </div>
+            <div class="form-group">
+              <label class="form-label">Meter No.</label
+              ><input
+                type="text"
+                class="form-input"
+                id="roMeter"
+                placeholder="Meter number"
+              />
+            </div>
+          </div>
+          <div class="form-row form-row-2">
+            <div class="form-group">
+              <label class="form-label">Landmark</label
+              ><input
+                type="text"
+                class="form-input"
+                id="roLandmark"
+                placeholder="Nearest landmark"
+              />
+            </div>
+            <div class="form-group">
+              <label class="form-label">TOR/CR No.</label
+              ><input
+                type="text"
+                class="form-input"
+                id="roTOR"
+                placeholder="e.g. 0391181"
+              />
+            </div>
+          </div>
+          <div
+            style="
+              margin-top: 16px;
+              font-size: 13px;
+              font-weight: 600;
+              margin-bottom: 12px;
+            "
+          >
+            Fee Computation
+          </div>
+          <div class="form-row form-row-3">
+            <div class="form-group">
+              <label class="form-label">Power Bills (₱)</label
+              ><input
+                type="number"
+                class="form-input"
+                id="roBills"
+                value="0"
+                onchange="computeReconTotal()"
+              />
+            </div>
+            <div class="form-group">
+              <label class="form-label">Surcharge (₱)</label
+              ><input
+                type="number"
+                class="form-input"
+                id="roSurcharge"
+                value="0"
+                onchange="computeReconTotal()"
+              />
+            </div>
+            <div class="form-group">
+              <label class="form-label">Recon. Fee (₱)</label
+              ><input
+                type="number"
+                class="form-input"
+                id="roReconFee"
+                value="150"
+                onchange="computeReconTotal()"
+              />
+            </div>
+          </div>
+          <div class="form-row form-row-3">
+            <div class="form-group">
+              <label class="form-label">Mtr. Seal/SF (₱)</label
+              ><input
+                type="number"
+                class="form-input"
+                id="roSeal"
+                value="90"
+                onchange="computeReconTotal()"
+              />
+            </div>
+            <div class="form-group">
+              <label class="form-label">Others/VAT (₱)</label
+              ><input
+                type="number"
+                class="form-input"
+                id="roOthers"
+                value="0"
+                onchange="computeReconTotal()"
+              />
+            </div>
+            <div class="form-group">
+              <label class="form-label">TOTAL (₱)</label
+              ><input
+                type="text"
+                class="form-input"
+                id="roTotal"
+                value="240.00"
+                readonly
+                style="font-weight: 700; color: var(--accent-green)"
+              />
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button
+            class="btn btn-ghost btn-sm"
+            onclick="hideModal('reconModal')"
+          >
+            Cancel</button
+          ><button
+            class="btn btn-success btn-sm"
+            onclick="submitReconnection()"
+          >
+            Create Order
+          </button>
+        </div>
+      </div>
+    </div>

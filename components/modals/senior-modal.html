@@ -1,0 +1,160 @@
+    <!-- Senior Citizen Modal -->
+    <div class="modal-overlay" id="seniorModal">
+      <div class="modal" style="width: 650px">
+        <div class="modal-header">
+          <div class="modal-title">
+            Senior Citizen Discount Application (RA 9994)
+          </div>
+          <button class="modal-close" onclick="hideModal('seniorModal')">
+            ✕
+          </button>
+        </div>
+        <div class="modal-body">
+          <div class="form-row form-row-2">
+            <div class="form-group">
+              <label class="form-label">Registered Name</label
+              ><input
+                type="text"
+                class="form-input"
+                id="scName"
+                placeholder="Full name"
+              />
+            </div>
+            <div class="form-group">
+              <label class="form-label">Account No.</label
+              ><input
+                type="text"
+                class="form-input"
+                id="scAccount"
+                placeholder="Account no."
+              />
+            </div>
+          </div>
+          <div class="form-row form-row-2">
+            <div class="form-group">
+              <label class="form-label">Address</label
+              ><input
+                type="text"
+                class="form-input"
+                id="scAddress"
+                placeholder="Purok/Brgy."
+              />
+            </div>
+            <div class="form-group">
+              <label class="form-label">Meter Number</label
+              ><input
+                type="text"
+                class="form-input"
+                id="scMeter"
+                placeholder="Meter no."
+              />
+            </div>
+          </div>
+          <div class="form-row form-row-3">
+            <div class="form-group">
+              <label class="form-label">Date of Birth</label
+              ><input type="date" class="form-input" id="scDOB" />
+            </div>
+            <div class="form-group">
+              <label class="form-label">Age</label
+              ><input
+                type="number"
+                class="form-input"
+                id="scAge"
+                placeholder="Must be 60+"
+              />
+            </div>
+            <div class="form-group">
+              <label class="form-label">SC Membership No.</label
+              ><input
+                type="text"
+                class="form-input"
+                id="scMembership"
+                placeholder="OSCA ID"
+              />
+            </div>
+          </div>
+          <div style="margin-top: 20px">
+            <label class="form-label">Required Documents Checklist</label>
+            <div
+              style="
+                background: var(--bg-input);
+                border-radius: var(--radius-sm);
+                padding: 12px 16px;
+                margin-bottom: 12px;
+              "
+            >
+              <div class="checklist-item">
+                <input type="checkbox" id="scDoc1" /><label for="scDoc1"
+                  >Proof of Age & Citizenship (Birth Cert / OSCA ID / Gov't
+                  ID)</label
+                >
+              </div>
+              <div class="checklist-item">
+                <input type="checkbox" id="scDoc2" /><label for="scDoc2"
+                  >Proof of Residence (Barangay Certificate / Affidavit)</label
+                >
+              </div>
+              <div class="checklist-item">
+                <input type="checkbox" id="scDoc3" /><label for="scDoc3"
+                  >Proof of Billing (Electric bill in applicant's name)</label
+                >
+              </div>
+              <div class="checklist-item">
+                <input type="checkbox" id="scDoc4" /><label for="scDoc4"
+                  >Authorization Letter (if through representative)</label
+                >
+              </div>
+            </div>
+          </div>
+          <div>
+            <label class="form-label">Upload Supporting Documents</label>
+            <div
+              class="file-upload"
+              onclick="document.getElementById('scFileInput').click()"
+            >
+              <div class="file-upload-icon">📁</div>
+              <div class="file-upload-text">Click to upload document scans</div>
+              <div class="file-upload-hint">PDF, JPG, PNG — Max 5MB each</div>
+            </div>
+            <input
+              type="file"
+              id="scFileInput"
+              multiple
+              accept=".pdf,.jpg,.jpeg,.png"
+              style="display: none"
+              onchange="handleFileUpload(this, 'scFileList')"
+            />
+            <div class="file-list" id="scFileList"></div>
+          </div>
+          <div
+            style="
+              margin-top: 16px;
+              padding: 12px 16px;
+              background: var(--accent-yellow-dim);
+              border-radius: var(--radius-sm);
+              border: 1px solid rgba(245, 158, 11, 0.2);
+              font-size: 12px;
+              color: var(--accent-yellow);
+              line-height: 1.6;
+            "
+          >
+            ⚠️ Discount applies only if consumption ≤ 100 kWh per billing (ERC
+            Resolution No. 23, s 2012).
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button
+            class="btn btn-ghost btn-sm"
+            onclick="hideModal('seniorModal')"
+          >
+            Cancel</button
+          ><button
+            class="btn btn-success btn-sm"
+            onclick="submitSeniorDiscount()"
+          >
+            Submit Application
+          </button>
+        </div>
+      </div>
+    </div>

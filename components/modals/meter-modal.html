@@ -1,0 +1,210 @@
+    <!-- Meter Change Modal -->
+    <div class="modal-overlay" id="meterModal">
+      <div class="modal" style="width: 700px">
+        <div class="modal-header">
+          <div class="modal-title">New Change Meter Order</div>
+          <button class="modal-close" onclick="hideModal('meterModal')">
+            ✕
+          </button>
+        </div>
+        <div class="modal-body">
+          <div class="form-row form-row-2">
+            <div class="form-group">
+              <label class="form-label">Consumer Name</label
+              ><input
+                type="text"
+                class="form-input"
+                id="mcName"
+                placeholder="Full name"
+              />
+            </div>
+            <div class="form-group">
+              <label class="form-label">Account No.</label
+              ><input
+                type="text"
+                class="form-input"
+                id="mcAccount"
+                placeholder="Account number"
+              />
+            </div>
+          </div>
+          <div class="form-row form-row-2">
+            <div class="form-group">
+              <label class="form-label">Address</label
+              ><input
+                type="text"
+                class="form-input"
+                id="mcAddress"
+                placeholder="Complete address"
+              />
+            </div>
+            <div class="form-group">
+              <label class="form-label">Reason</label
+              ><select class="form-input" id="mcReason">
+                <option value="">Select</option>
+                <option>Defective Meter</option>
+                <option>Meter Upgrade</option>
+                <option>Burnt Meter</option>
+                <option>Meter Testing</option>
+                <option>Consumer Request</option>
+                <option>Others</option>
+              </select>
+            </div>
+          </div>
+          <div
+            style="
+              margin-top: 16px;
+              font-size: 13px;
+              font-weight: 600;
+              margin-bottom: 12px;
+            "
+          >
+            Removed Meter
+          </div>
+          <div class="form-row form-row-3">
+            <div class="form-group">
+              <label class="form-label">Brand</label
+              ><input
+                type="text"
+                class="form-input"
+                id="mcOldBrand"
+                placeholder="e.g. Hexing"
+              />
+            </div>
+            <div class="form-group">
+              <label class="form-label">Meter No.</label
+              ><input
+                type="text"
+                class="form-input"
+                id="mcOldMeter"
+                placeholder="Old meter no."
+              />
+            </div>
+            <div class="form-group">
+              <label class="form-label">Last Reading</label
+              ><input
+                type="text"
+                class="form-input"
+                id="mcOldReading"
+                placeholder="kWh"
+              />
+            </div>
+          </div>
+          <div class="form-row form-row-3">
+            <div class="form-group">
+              <label class="form-label">Ampere</label
+              ><input
+                type="text"
+                class="form-input"
+                id="mcOldAmpere"
+                placeholder="30A"
+              />
+            </div>
+            <div class="form-group">
+              <label class="form-label">Volts</label
+              ><input
+                type="text"
+                class="form-input"
+                id="mcOldVolts"
+                placeholder="240V"
+              />
+            </div>
+            <div class="form-group">
+              <label class="form-label">Multiplier</label
+              ><input
+                type="text"
+                class="form-input"
+                id="mcOldMult"
+                placeholder="1"
+              />
+            </div>
+          </div>
+          <div
+            style="
+              margin-top: 16px;
+              font-size: 13px;
+              font-weight: 600;
+              margin-bottom: 12px;
+            "
+          >
+            New Meter
+          </div>
+          <div class="form-row form-row-3">
+            <div class="form-group">
+              <label class="form-label">Brand</label
+              ><input
+                type="text"
+                class="form-input"
+                id="mcNewBrand"
+                placeholder="e.g. Hexing"
+              />
+            </div>
+            <div class="form-group">
+              <label class="form-label">Meter No.</label
+              ><input
+                type="text"
+                class="form-input"
+                id="mcNewMeter"
+                placeholder="New meter no."
+              />
+            </div>
+            <div class="form-group">
+              <label class="form-label">Initial Reading</label
+              ><input
+                type="text"
+                class="form-input"
+                id="mcNewReading"
+                placeholder="0"
+              />
+            </div>
+          </div>
+          <div class="form-row form-row-3">
+            <div class="form-group">
+              <label class="form-label">Ampere</label
+              ><input
+                type="text"
+                class="form-input"
+                id="mcNewAmpere"
+                placeholder="30A"
+              />
+            </div>
+            <div class="form-group">
+              <label class="form-label">Volts</label
+              ><input
+                type="text"
+                class="form-input"
+                id="mcNewVolts"
+                placeholder="240V"
+              />
+            </div>
+            <div class="form-group">
+              <label class="form-label">Meter Seal No.</label
+              ><input
+                type="text"
+                class="form-input"
+                id="mcSealNo"
+                placeholder="Seal number"
+              />
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Remarks</label
+            ><textarea
+              class="form-input"
+              id="mcRemarks"
+              placeholder="Notes..."
+            ></textarea>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button
+            class="btn btn-ghost btn-sm"
+            onclick="hideModal('meterModal')"
+          >
+            Cancel</button
+          ><button class="btn btn-success btn-sm" onclick="submitMeterChange()">
+            Create Order
+          </button>
+        </div>
+      </div>
+    </div>

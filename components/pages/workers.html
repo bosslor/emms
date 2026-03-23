@@ -1,0 +1,68 @@
+          <!-- WORKER MANAGEMENT (Admin) -->
+          <div class="page" id="page-workers">
+            <div
+              style="
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                margin-bottom: 20px;
+              "
+            >
+              <div style="font-size: 13px; color: var(--text-muted)">
+                Manage field workers, crew assignments, and availability
+              </div>
+              <button
+                class="btn btn-primary btn-sm"
+                id="btnAddWorker"
+                onclick="showModal('workerModal')"
+              >
+                + Add Worker
+              </button>
+            </div>
+            <div class="filter-bar">
+              <select
+                class="form-input"
+                onchange="filterTable('workerTable', this.value, 4)"
+              >
+                <option value="">All Status</option>
+                <option value="Available">Available</option>
+                <option value="On Job">On Job</option>
+                <option value="Off Duty">Off Duty</option>
+                <option value="On Leave">On Leave</option>
+              </select>
+              <select
+                class="form-input"
+                onchange="filterTable('workerTable', this.value, 2)"
+              >
+                <option value="">All Teams</option>
+                <option value="Crew Alpha">Crew Alpha</option>
+                <option value="Crew Bravo">Crew Bravo</option>
+                <option value="Crew Charlie">Crew Charlie</option>
+              </select>
+              <input
+                type="text"
+                class="form-input"
+                placeholder="Search by name or specialty..."
+                onkeyup="searchTable('workerTable', this.value)"
+              />
+            </div>
+            <div class="card">
+              <div style="overflow-x: auto">
+                <table id="workerTable">
+                  <thead>
+                    <tr>
+                      <th>Worker ID</th>
+                      <th>Name</th>
+                      <th>Team</th>
+                      <th>Specialty</th>
+                      <th>Status</th>
+                      <th>Phone</th>
+                      <th>Active Jobs</th>
+                      <th>Actions</th>
+                    </tr>
+                  </thead>
+                  <tbody id="workerTableBody"></tbody>
+                </table>
+              </div>
+            </div>
+          </div>

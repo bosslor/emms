@@ -1,0 +1,51 @@
+<!-- ===== USER MANAGEMENT PAGE ===== -->
+          <div class="page" id="page-user-mgmt">
+            <div
+              style="
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                margin-bottom: 20px;
+              "
+            >
+              <div style="font-size: 13px; color: var(--text-muted)">
+                Create and manage user accounts for all roles
+              </div>
+              <div style="display: flex; gap: 8px;">
+                <button
+                  class="btn btn-sm"
+                  id="btnBulkImportConsumers"
+                  style="background: var(--esamelco-green); color: #fff; display: none;"
+                  onclick="showModal('bulkConsumerModal')"
+                >
+                  📥 Bulk Import Consumers
+                </button>
+                <button
+                  class="btn btn-primary btn-sm"
+                  onclick="showAddUserModal()"
+                >
+                  + Add User
+                </button>
+              </div>
+            </div>
+            <div class="card">
+              <div style="overflow-x: auto">
+                <table id="userTable">
+                  <thead>
+                    <tr>
+                      <th>Username</th>
+                      <th>Full Name</th>
+                      <th>Role</th>
+                      <th>Email</th>
+                      <th>Phone</th>
+                      <th>Status</th>
+                      <th>Last Login</th>
+                      <th>Actions</th>
+                    </tr>
+                  </thead>
+                  <tbody id="userTableBody"></tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+

@@ -1,0 +1,109 @@
+<!-- ADMIN SIDEBAR -->
+<aside class="sidebar" id="sidebar">
+  <div class="sidebar-header">
+    <div class="sidebar-logo">
+      <img
+        src="sidebar-logo.png"
+        alt="Logo"
+        class="admin-sidebar"
+      />
+    </div>
+    <div>
+      <div class="sidebar-brand">ESAMELCO</div>
+      <div class="sidebar-brand-sub">MAINTENANCE MGMT SYSTEM</div>
+    </div>
+  </div>
+  <nav class="sidebar-nav">
+    <div class="nav-section-label">Overview</div>
+    <div
+      class="nav-item active"
+      data-page="dashboard"
+      onclick="navigateTo('dashboard')"
+    >
+      <span class="nav-icon">📊</span> Dashboard
+    </div>
+    <div class="nav-section-label">Operations</div>
+    <div
+      class="nav-item"
+      data-page="members"
+      onclick="navigateTo('members')"
+    >
+      <span class="nav-icon">👥</span> Member Registration
+    </div>
+    <div
+      class="nav-item"
+      data-page="service-requests"
+      onclick="navigateTo('service-requests')"
+    >
+      <span class="nav-icon">🔧</span> Service Requests Order
+      <span class="nav-badge" id="srBadge">3</span>
+    </div>
+    <div
+      class="nav-item"
+      data-page="reconnection"
+      onclick="navigateTo('reconnection')"
+    >
+      <span class="nav-icon">🔌</span> Reconnection Orders
+    </div>
+    <div
+      class="nav-item"
+      data-page="meter-change"
+      onclick="navigateTo('meter-change')"
+    >
+      <span class="nav-icon">⏱️</span> Change Meter Orders
+    </div>
+    <div
+      class="nav-item"
+      data-page="senior-discount"
+      onclick="navigateTo('senior-discount')"
+    >
+      <span class="nav-icon">🎖️</span> Senior Citizen Discount
+    </div>
+    <div class="nav-section-label">Administration</div>
+    <div
+      class="nav-item"
+      data-page="workers"
+      onclick="navigateTo('workers')"
+    >
+      <span class="nav-icon">👷</span> Worker Management
+      <span class="nav-badge" id="workerBadge">5</span>
+    </div>
+    <div
+      class="nav-item"
+      data-page="user-mgmt"
+      onclick="navigateTo('user-mgmt')"
+      style="display: none"
+    >
+      <span class="nav-icon">🔑</span> User Management
+    </div>
+    <div
+      class="nav-item"
+      data-page="approvals"
+      onclick="navigateTo('approvals')"
+    >
+      <span class="nav-icon">✅</span> Approval Queue
+      <span class="nav-badge" id="approvalBadge">5</span>
+    </div>
+    <div class="nav-item" data-page="audit" onclick="navigateTo('audit')">
+      <span class="nav-icon">📋</span> Audit Log
+    </div>
+  </nav>
+  <div class="sidebar-footer">
+    <div class="user-info">
+      <div
+        class="user-avatar"
+        id="userAvatar"
+        style="background: var(--accent-blue)"
+      >
+        A
+      </div>
+      <div>
+        <div class="user-name" id="userName">Admin</div>
+        <div class="user-role" id="userRole">Administrator</div>
+      </div>
+    </div>
+    <button class="logout-btn" onclick="handleLogout()">
+      ↩ Sign Out
+    </button>
+  </div>
+</aside>

@@ -1,0 +1,41 @@
+          <!-- RECONNECTION -->
+          <div class="page" id="page-reconnection">
+            <div
+              style="
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                margin-bottom: 20px;
+              "
+            >
+              <div style="font-size: 13px; color: var(--text-muted)">
+                Process reconnection orders with approval workflow
+              </div>
+              <button
+                class="btn btn-primary btn-sm"
+                onclick="showModal('reconModal')"
+              >
+                + New Reconnection
+              </button>
+            </div>
+            <div class="card">
+              <div style="overflow-x: auto">
+                <table id="reconTable">
+                  <thead>
+                    <tr>
+                      <th>RO No.</th>
+                      <th>Consumer</th>
+                      <th>Account</th>
+                      <th>Meter</th>
+                      <th>Total Fee</th>
+                      <th>Assigned To</th>
+                      <th>Status</th>
+                      <th>Approval</th>
+                      <th>Actions</th>
+                    </tr>
+                  </thead>
+                  <tbody id="reconTableBody"></tbody>
+                </table>
+              </div>
+            </div>
+          </div>

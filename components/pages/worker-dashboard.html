@@ -1,0 +1,47 @@
+          <!-- WORKER DASHBOARD -->
+          <div class="page" id="page-w-dashboard">
+            <div class="worker-stat-row">
+              <div class="worker-stat">
+                <div
+                  class="worker-stat-value"
+                  style="color: #06b6d4"
+                  id="wStatActive"
+                >
+                  0
+                </div>
+                <div class="worker-stat-label">Active Jobs</div>
+              </div>
+              <div class="worker-stat">
+                <div
+                  class="worker-stat-value"
+                  style="color: var(--accent-green)"
+                  id="wStatCompleted"
+                >
+                  0
+                </div>
+                <div class="worker-stat-label">Completed This Month</div>
+              </div>
+              <div class="worker-stat">
+                <div
+                  class="worker-stat-value"
+                  style="color: var(--accent-yellow)"
+                  id="wStatPending"
+                >
+                  0
+                </div>
+                <div class="worker-stat-label">Pending Start</div>
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card-header">
+                <div class="card-title">Today's Assignments</div>
+              </div>
+              <div class="card-body" id="wTodayJobs">
+                <div class="empty-state" style="padding: 24px">
+                  <div class="empty-state-icon" style="font-size: 32px">📋</div>
+                  <div style="font-size: 13px">No jobs assigned yet</div>
+                </div>
+              </div>
+            </div>
+          </div>

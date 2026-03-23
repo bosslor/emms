@@ -1,0 +1,166 @@
+    <!-- Import Coordinates Modal -->
+    <div class="modal-overlay" id="importCoordsModal">
+      <div class="modal" style="width: 650px">
+        <div class="modal-header">
+          <div class="modal-title">📍 Import Member Coordinates from Excel</div>
+          <button class="modal-close" onclick="hideModal('importCoordsModal')">
+            ✕
+          </button>
+        </div>
+        <div class="modal-body">
+          <div
+            style="
+              padding: 16px;
+              background: rgba(6, 182, 212, 0.06);
+              border: 1px solid rgba(6, 182, 212, 0.15);
+              border-radius: 8px;
+              margin-bottom: 20px;
+            "
+          >
+            <div
+              style="
+                font-size: 13px;
+                font-weight: 600;
+                color: #06b6d4;
+                margin-bottom: 8px;
+              "
+            >
+              📋 Excel Format Required
+            </div>
+            <div
+              style="
+                font-size: 12px;
+                color: var(--text-muted);
+                line-height: 1.8;
+              "
+            >
+              Your Excel file (.xlsx or .csv) must have these columns:<br />
+              <span
+                style="
+                  font-family: &quot;JetBrains Mono&quot;, monospace;
+                  font-size: 11px;
+                  background: var(--bg-input);
+                  padding: 2px 6px;
+                  border-radius: 3px;
+                "
+                >account_no</span
+              >
+              — Member's account number (must match existing records)<br />
+              <span
+                style="
+                  font-family: &quot;JetBrains Mono&quot;, monospace;
+                  font-size: 11px;
+                  background: var(--bg-input);
+                  padding: 2px 6px;
+                  border-radius: 3px;
+                "
+                >latitude</span
+              >
+              — Decimal latitude (e.g. 11.60862500)<br />
+              <span
+                style="
+                  font-family: &quot;JetBrains Mono&quot;, monospace;
+                  font-size: 11px;
+                  background: var(--bg-input);
+                  padding: 2px 6px;
+                  border-radius: 3px;
+                "
+                >longitude</span
+              >
+              — Decimal longitude (e.g. 125.43620000)<br />
+              <div
+                style="
+                  margin-top: 8px;
+                  font-size: 11px;
+                  color: var(--accent-yellow);
+                "
+              >
+                ⚠️ Column headers must be in the first row. Order doesn't
+                matter.
+              </div>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">Upload Excel or CSV File</label>
+            <div
+              class="file-upload"
+              onclick="document.getElementById('coordsFileInput').click()"
+            >
+              <div class="file-upload-icon">📁</div>
+              <div class="file-upload-text" id="coordsFileName">
+                Click to select file
+              </div>
+              <div class="file-upload-hint">.xlsx or .csv only</div>
+            </div>
+            <input
+              type="file"
+              id="coordsFileInput"
+              accept=".xlsx,.xls,.csv"
+              style="display: none"
+              onchange="onCoordsFileSelected(this)"
+            />
+          </div>
+
+          <!-- Preview area -->
+          <div id="coordsPreview" style="display: none; margin-top: 16px">
+            <div
+              style="
+                font-size: 13px;
+                font-weight: 600;
+                margin-bottom: 8px;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+              "
+            >
+              <span>Preview</span>
+              <span
+                id="coordsPreviewCount"
+                style="font-size: 11px; color: var(--text-muted)"
+              ></span>
+            </div>
+            <div
+              style="
+                max-height: 250px;
+                overflow-y: auto;
+                border: 1px solid var(--border);
+                border-radius: var(--radius-sm);
+              "
+            >
+              <table id="coordsPreviewTable" style="font-size: 12px">
+                <thead>
+                  <tr>
+                    <th>Account No.</th>
+                    <th>Latitude</th>
+                    <th>Longitude</th>
+                    <th>Status</th>
+                  </tr>
+                </thead>
+                <tbody id="coordsPreviewBody"></tbody>
+              </table>
+            </div>
+          </div>
+
+          <!-- Result area -->
+          <div id="coordsResult" style="display: none; margin-top: 16px"></div>
+        </div>
+        <div class="modal-footer">
+          <button
+            class="btn btn-ghost btn-sm"
+            onclick="hideModal('importCoordsModal')"
+          >
+            Cancel
+          </button>
+          <button
+            class="btn btn-sm"
+            style="background: #06b6d4; color: #fff"
+            id="btnImportCoords"
+            onclick="executeImportCoords()"
+            disabled
+          >
+            📍 Import Coordinates
+          </button>
+        </div>
+      </div>
+    </div>

@@ -1,0 +1,25 @@
+          <!-- WORKER ACTIVE ASSIGNMENTS -->
+          <div class="page" id="page-w-assignments">
+            <div
+              style="
+                font-size: 13px;
+                color: var(--text-muted);
+                margin-bottom: 20px;
+              "
+            >
+              Service requests and reconnection orders assigned to you
+            </div>
+            <div class="filter-bar">
+              <select
+                class="form-input"
+                id="wAssignFilter"
+                onchange="renderWorkerAssignments(this.value)"
+                style="min-width: 140px"
+              >
+                <option value="all">All Types</option>
+                <option value="sr">Service Requests</option>
+                <option value="ro">Reconnections</option>
+              </select>
+            </div>
+            <div id="wAssignmentsList"></div>
+          </div>

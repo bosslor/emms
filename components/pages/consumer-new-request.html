@@ -1,0 +1,104 @@
+<!-- CONSUMER SUBMIT REQUEST -->
+<div class="page" id="page-c-new-request">
+  <div style="font-size: 13px; color: var(--text-muted); margin-bottom: 20px">
+    Submit a service request or report an issue
+  </div>
+  <div class="card" style="max-width: 650px">
+    <div class="card-body">
+      <div class="form-group">
+        <label class="form-label">What do you need help with?</label>
+        <select class="form-input" id="cSrNature">
+          <option value="">Select the type of request</option>
+          <option value="High Bill">
+            ⚡ High Bill — My bill seems too high
+          </option>
+          <option value="No Light">💡 No Light — I have no electricity</option>
+          <option value="Meter Reading Error">
+            📊 Meter Reading Error — Reading seems wrong
+          </option>
+          <option value="Loose Connection">
+            🔌 Loose Connection — Sparking or loose wires
+          </option>
+          <option value="No Bill">📭 No Bill — I didn't receive a bill</option>
+          <option value="Reconnection">
+            🔄 Reconnection — Reconnect my service
+          </option>
+          <option value="Request Meter Test">🔍 Request Meter Test</option>
+          <option value="SDW Sagging">📐 Service Drop Wire Sagging</option>
+          <option value="New Connection">🆕 New Connection</option>
+          <option value="Others">📋 Others</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label class="form-label">Nearest Landmark (for crew reference)</label
+        ><input
+          type="text"
+          class="form-input"
+          id="cSrLandmark"
+          placeholder="e.g. Near Brgy. Hall, beside sari-sari store"
+        />
+      </div>
+      <div class="form-group">
+        <label class="form-label">Describe the issue</label
+        ><textarea
+          class="form-input"
+          id="cSrRemarks"
+          placeholder="Tell us more about your concern..."
+          style="min-height: 100px"
+        ></textarea>
+      </div>
+      <div class="form-group">
+        <label class="form-label">Contact Number</label
+        ><input
+          type="text"
+          class="form-input"
+          id="cSrPhone"
+          placeholder="So our crew can reach you"
+        />
+      </div>
+      <div class="form-group">
+        <label class="form-label"
+          >Attach Photos
+          <span style="color: var(--text-muted); font-weight: 400"
+            >(optional, max 5 images)</span
+          ></label
+        >
+        <input
+          type="file"
+          class="form-input"
+          id="cSrPhotos"
+          accept="image/*"
+          multiple
+          style="padding: 8px"
+          onchange="handleSrPhotoSelect(this)"
+        />
+        <div
+          id="cSrPhotoPreview"
+          style="display: flex; flex-wrap: wrap; gap: 8px; margin-top: 8px"
+        ></div>
+      </div>
+      <div
+        style="
+          margin-top: 20px;
+          display: flex;
+          gap: 12px;
+          justify-content: flex-end;
+        "
+      >
+        <button
+          class="btn btn-ghost btn-sm"
+          onclick="navigateTo('c-dashboard')"
+        >
+          Cancel
+        </button>
+        <button
+          class="btn btn-success btn-sm"
+          onclick="consumerSubmitSR()"
+          style="padding: 10px 24px"
+        >
+          Submit Request
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

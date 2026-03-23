@@ -1,0 +1,64 @@
+<!-- CONSUMER SIDEBAR -->
+<aside
+  class="sidebar consumer-sidebar"
+  id="consumerSidebar"
+  style="display: none"
+>
+  <div class="sidebar-header">
+    <div class="sidebar-logo">
+      <img
+        src="sidebar-logo.png"
+        alt="Logo"
+        class="admin-sidebar"
+      />
+    </div>
+    <div>
+      <div class="sidebar-brand">ESAMELCO</div>
+      <div class="sidebar-brand-sub">MY ACCOUNT PORTAL</div>
+    </div>
+  </div>
+  <nav class="sidebar-nav">
+    <div class="nav-section-label">My Account</div>
+    <div
+      class="nav-item active"
+      data-page="c-dashboard"
+      onclick="navigateTo('c-dashboard')"
+    >
+      <span class="nav-icon">🏠</span> Account Overview
+    </div>
+    <div class="nav-section-label">Services</div>
+    <div
+      class="nav-item"
+      data-page="c-new-request"
+      onclick="navigateTo('c-new-request')"
+    >
+      <span class="nav-icon">📝</span> Submit a Request
+    </div>
+    <div
+      class="nav-item"
+      data-page="c-my-requests"
+      onclick="navigateTo('c-my-requests')"
+    >
+      <span class="nav-icon">📋</span> My Requests
+    </div>
+    <div class="nav-item" data-page="c-senior" onclick="navigateTo('c-senior')">
+      <span class="nav-icon">🎖️</span> Senior Citizen Discount
+    </div>
+  </nav>
+  <div class="sidebar-footer">
+    <div class="user-info">
+      <div
+        class="user-avatar"
+        id="cUserAvatar"
+        style="background: var(--esamelco-green)"
+      >
+        M
+      </div>
+      <div>
+        <div class="user-name" id="cUserName">Consumer</div>
+        <div class="user-role" id="cUserRole">Member</div>
+      </div>
+    </div>
+    <button class="logout-btn" onclick="handleLogout()">↩ Sign Out</button>
+  </div>
+</aside>

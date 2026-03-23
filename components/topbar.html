@@ -1,0 +1,33 @@
+<!-- TOP BAR -->
+<div class="topbar">
+  <div style="display: flex; align-items: center; gap: 12px">
+    <button
+      class="btn btn-ghost btn-sm"
+      onclick="toggleSidebar()"
+      style="display: none"
+      id="menuBtn"
+    >
+      ☰
+    </button>
+    <div class="topbar-title" id="pageTitle">Dashboard</div>
+  </div>
+  <div style="display: flex; align-items: center; gap: 12px">
+    <div class="search-box">
+      <span style="color: var(--text-muted)">🔍</span
+      ><input
+        type="text"
+        placeholder="Search records..."
+        id="globalSearch"
+        onkeyup="handleGlobalSearch(this.value)"
+      />
+    </div>
+    <div
+      style="
+        font-size: 12px;
+        color: var(--text-muted);
+        font-family: &quot;JetBrains Mono&quot;, monospace;
+      "
+      id="currentDate"
+    ></div>
+  </div>
+</div>

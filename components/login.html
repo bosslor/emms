@@ -1,0 +1,52 @@
+<!-- LOGIN SCREEN -->
+<div class="login-screen" id="loginScreen">
+  <div class="login-box">
+    <div class="login-logo">
+      <img
+        src="logo-no-background-dJola417ZeS4Qxrb.avif"
+        alt="Logo"
+        class="logo-img"
+      />
+    </div>
+
+    <div class="login-title">SERBISYO</div>
+    <div class="login-subtitle">
+      Smart ESAMELCO<br />Request-Based Integrated System for Your Operations
+    </div>
+    <div class="login-error" id="loginError">Invalid credentials.</div>
+    <div class="form-group">
+      <label class="form-label">Username</label>
+      <input
+        type="text"
+        class="form-input"
+        id="loginUser"
+        placeholder="Enter your username"
+        autocomplete="off"
+      />
+    </div>
+    <div class="form-group">
+      <label class="form-label">Password</label>
+      <input
+        type="password"
+        class="form-input"
+        id="loginPass"
+        placeholder="Enter your password"
+      />
+    </div>
+    <button class="btn btn-primary" onclick="handleLogin()">Sign In</button>
+    <div style="margin-top: 16px; text-align: center">
+      <div
+        style="
+          font-size: 11px;
+          color: var(--text-muted);
+          font-family: &quot;JetBrains Mono&quot;, monospace;
+          line-height: 1.8;
+        "
+      >
+        <span style="color: var(--text-muted)"
+          >Contact your administrator for access</span
+        >
+      </div>
+    </div>
+  </div>
+</div>

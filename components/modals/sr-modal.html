@@ -1,0 +1,98 @@
+    <div class="modal-overlay" id="srModal">
+      <div class="modal">
+        <div class="modal-header">
+          <div class="modal-title">New Service Request</div>
+          <button class="modal-close" onclick="hideModal('srModal')">✕</button>
+        </div>
+        <div class="modal-body">
+          <div class="form-row form-row-2">
+            <div class="form-group">
+              <label class="form-label">Consumer Name</label
+              ><input
+                type="text"
+                class="form-input"
+                id="srName"
+                placeholder="Full name"
+              />
+            </div>
+            <div class="form-group">
+              <label class="form-label">Account No.</label
+              ><input
+                type="text"
+                class="form-input"
+                id="srAccount"
+                placeholder="05-0502-0497"
+              />
+            </div>
+          </div>
+          <div class="form-row form-row-2">
+            <div class="form-group">
+              <label class="form-label">Address</label
+              ><input
+                type="text"
+                class="form-input"
+                id="srAddress"
+                placeholder="Complete address"
+              />
+            </div>
+            <div class="form-group">
+              <label class="form-label">Meter No.</label
+              ><input
+                type="text"
+                class="form-input"
+                id="srMeter"
+                placeholder="Meter number"
+              />
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Nature of Request</label
+            ><select class="form-input" id="srNature">
+              <option value="">Select type</option>
+              <option>High Bill</option>
+              <option>Meter Reading Error</option>
+              <option>No Bill</option>
+              <option>Reconnection</option>
+              <option>Busted Transformer</option>
+              <option>Meter Relocation</option>
+              <option>Loose Connection</option>
+              <option>Request Meter Test</option>
+              <option>No Light</option>
+              <option>SDW Relocation</option>
+              <option>SDW Sagging</option>
+              <option>Cut SDW</option>
+              <option>Pole Relocation</option>
+              <option>New Connection</option>
+              <option>Others</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Nearest Consumer / Landmark</label
+            ><input
+              type="text"
+              class="form-input"
+              id="srLandmark"
+              placeholder="For crew reference"
+            />
+          </div>
+          <div class="form-group">
+            <label class="form-label">Remarks</label
+            ><textarea
+              class="form-input"
+              id="srRemarks"
+              placeholder="Additional details..."
+            ></textarea>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button class="btn btn-ghost btn-sm" onclick="hideModal('srModal')">
+            Cancel</button
+          ><button
+            class="btn btn-success btn-sm"
+            onclick="submitServiceRequest()"
+          >
+            Submit Request
+          </button>
+        </div>
+      </div>
+    </div>
